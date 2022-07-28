@@ -18,19 +18,19 @@ for link in links:
     res = requests.get(link)
     soup2 = BeautifulSoup(res.text , 'html.parser')
 
-    # time/date
+    # find time/date
     div = soup2.find('div' , attrs={'class' : 'item-date'})
     time_date = div.find('span')
     print('-----------------------------------------------------------------------------------------------------------')
     print(time_date.text)
 
-    # title
+    # find title
     tag_h1 = soup2.find('h1', attrs={'class' : 'title'})
     title = tag_h1.find('a')
     num+=1
     print(f'{num} {title.text}')
 
-    # text
+    # find text
     try:
         tag_div = soup2.find('div' , attrs={'class' : 'item-text'})
         for p in tag_div:
