@@ -21,7 +21,6 @@ for link in links:
     # find time/date
     div = soup2.find('div' , attrs={'class' : 'item-date'})
     time_date = div.find('span')
-    print('-----------------------------------------------------------------------------------------------------------')
     print(time_date.text)
 
     # find title
@@ -35,5 +34,6 @@ for link in links:
         tag_div = soup2.find('div' , attrs={'class' : 'item-text'})
         for p in tag_div:
             print(p.text)
+        print('-----------------------------------------------------------------------------------------------------------')
     except:
         continue
